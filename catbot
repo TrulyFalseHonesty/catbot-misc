@@ -2,26 +2,22 @@
 
 cd /usr/lib/catbot
 
-if [ ! $1 ]; then
-  echo Usage: catbot [OPTIONS]
-  echo options: start stop update accounts ipc-password cathook
-  exit
-fi
-
-if [ $1 == "accounts" ]; then
-  xdg-open accounts.txt &
-  exit
-fi
-
-if [ $1 == "ipc-password" ]; then 
-  cat /tmp/cat-webpanel-password
-  exit
-fi
-
-if [ $1 == "cathook" ]; then
-  cd cathook
-  exec ./attach
-  exit
-fi
-
-exec "./${1}"
+case $1 in
+  start|stop|update)
+    exec "./${1}"
+    ;;
+  accounts)
+    xdg-open accounts.txt &
+    ;;
+  ipc-password)
+    cat /tmp/cat-webpanel-password
+    ;;
+  cathook)
+    cd cathook
+    exec ./attach
+    ;;
+  *)
+    echo Usage: catbot [OPTIONS]
+    echo options: start stop update accounts ipc-password cathook
+    ;;
+esac
