@@ -18,4 +18,10 @@ if [ $1 == "ipc-password" ]; then
   exit
 fi
 
+if [ $1 == "cathook" ]; then
+  cd cathook
+  exec ./attach
+  exit
+fi
+
 exec "./${1}"
