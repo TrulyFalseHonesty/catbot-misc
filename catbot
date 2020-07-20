@@ -4,12 +4,17 @@ cd /usr/lib/catbot
 
 if [ ! $1 ]; then
   echo Usage: catbot [OPTIONS]
-  echo options: start stop update accounts
+  echo options: start stop update accounts ipc-password
   exit
 fi
 
 if [ $1 == "accounts" ]; then
   xdg-open accounts.txt &
+  exit
+fi
+
+if [ $1 == "ipc-password" ]; then 
+  cat /tmp/cat-webpanel-password
   exit
 fi
 
