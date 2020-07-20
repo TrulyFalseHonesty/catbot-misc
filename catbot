@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+cd /usr/lib/catbot
+
+if [ ! $1 ]; then
+  echo Usage: catbot [OPTIONS]
+  echo options: start stop update accounts
+  exit
+fi
+
+if [ $1 == "accounts" ]; then
+  xdg-open accounts.txt &
+  exit
+fi
+
+exec "./${1}"
