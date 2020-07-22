@@ -3,7 +3,7 @@
 cd /usr/lib/catbot
 
 case $1 in
-  start|stop|update)
+  start|stop|update|uninstall)
     exec "./${1}"
     ;;
   accounts)
@@ -22,6 +22,7 @@ case $1 in
     echo "      start               start the bots"
     echo "      stop                stop them"
     echo "      update              update catbot & cathook"
+    echo "      uninstall           uninstall catbot & cathook"
     echo "      cathook             attach cathook to TF2 (Cheat)"
     echo "      accounts            edit the accounts list (should follow the username:password format)"
     echo "      ipc-password        prints your IPC webpanel password to the terminal"
