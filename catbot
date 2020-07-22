@@ -14,7 +14,7 @@ case $1 in
     ;;
   cathook)
     cd cathook
-    exec ./attach
+    sudo ./attach
     ;;
   *)
     echo "  usage: catbot [OPTION]"
