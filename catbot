@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ ! -d $CATBOT_HOME/catbot ]; then
-  echo "Error: Installation Path (CABTOT_HOME) is BROKEN, Fix IT!"
+  echo "Error: Installation Path (CATBOT_HOME) is BROKEN, Fix IT!"
   exit
 fi
 
