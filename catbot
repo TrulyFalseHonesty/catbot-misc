@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-if [ ! -d $CATBOT_HOME/catbot ]; then
-  echo "Error: Installation Path (CATBOT_HOME) is BROKEN, Fix IT!"
+if [ ! -d $CATS/catbot ]; then
+  echo "Error: Installation Path (CATS_HOME) is BROKEN, Fix IT!"
   exit
 fi
 
-cd $CATBOT_HOME/catbot
+cd $CATS_HOME/catbot
 
 case $1 in
   start|stop|update|uninstall)
@@ -17,18 +17,13 @@ case $1 in
   ipc-password)
     cat /tmp/cat-webpanel-password
     ;;
-  cathook)
-    cd cathook
-    sudo ./attach
-    ;;
   *)
     echo "  usage: catbot <operation>"
     echo "  operations:"
     echo "      start               start the bots"
     echo "      stop                stop them"
-    echo "      update              update catbot & cathook"
-    echo "      uninstall           uninstall catbot & cathook"
-    echo "      cathook             attach cathook to TF2 (Cheat)"
+    echo "      update              update catbots"
+    echo "      uninstall           uninstall catbots"
     echo "      accounts            edit the accounts list (should follow the username:password format)"
     echo "      ipc-password        prints your IPC webpanel password to the terminal"
     ;;
