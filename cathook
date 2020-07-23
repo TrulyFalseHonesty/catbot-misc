@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ ! -d $CATS/cathook ]; then
+  echo "Error: Installation Path (CATS_HOME) is BROKEN, Fix IT!"
+  exit
+fi
+
+cd $CATS_HOME/cathook
+
+case $1 in
+  attach|preload|update)
+    exec "./${1}"
+    ;;
+  uninstall)
+    sudo rm -rf $CATS_HOME/cathook
+    ;;
+  *)
+    echo "  usage: cathook <operation>"
+    echo "  operations:"            "
+    echo "      attach              Attach (inject) Cat Hax"
+    echo "      preload             Preload cathook or something"
+    echo "      update              Update cathook"
+    echo "      uninstall           Uninstall cathook"
+    ;;
+esac
