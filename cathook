@@ -21,7 +21,7 @@ case $1 in
     ;;
   *)
     echo "  usage: cathook <operation>"
-    echo "  operations:"            "
+    echo "  operations:"
     echo "      attach              Attach (inject) Cat Hax"
     echo "      preload             Preload cathook or something"
     echo "      update              Update cathook"
