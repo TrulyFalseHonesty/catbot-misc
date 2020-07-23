@@ -22,8 +22,8 @@ case $1 in
     sudo ./attach
     ;;
   *)
-    echo "  usage: catbot [OPTION]"
-    echo "  where OPTION could be:"
+    echo "  usage: catbot <operation>"
+    echo "  operations:"
     echo "      start               start the bots"
     echo "      stop                stop them"
     echo "      update              update catbot & cathook"
