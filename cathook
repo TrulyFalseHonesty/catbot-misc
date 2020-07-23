@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
-if [ ! -d $CATS/cathook ]; then
+cd $CATS_HOME
+
+CATDIR="$(find -name catbot)"
+
+if [ ! -d $CATDIR ]; then
   echo "Error: Installation Path (CATS_HOME) is BROKEN, Fix IT!"
   exit
 fi
 
-cd $CATS_HOME/cathook
+cd $CATDIR
 
 case $1 in
   attach|preload|update)
     exec "./${1}"
     ;;
   uninstall)
-    sudo rm -rf $CATS_HOME/cathook
+    sudo rm -rf ../cathook
+    sudo rm -rf /usr/bin/cathook
     ;;
   *)
     echo "  usage: cathook <operation>"
