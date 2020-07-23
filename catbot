@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-cd /usr/lib/catbot
+if [ ! -d $CATBOT_HOME/catbot ]; then
+  echo "Error: Installation Path (CABTOT_HOME) is BROKEN, Fix IT!"
+  exit
+fi
+
+cd $CATBOT_HOME/catbot
 
 case $1 in
   start|stop|update|uninstall)
