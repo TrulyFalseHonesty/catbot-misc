@@ -11,6 +11,8 @@ if [ ! -d cathook ]; then
   exit
 fi
 
+cd cathook
+
 case $1 in
   attach)
     sudo "./${1}"
