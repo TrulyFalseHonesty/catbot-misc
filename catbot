@@ -11,6 +11,8 @@ if [ ! -d catbot ]; then
   exit
 fi
 
+cd catbot
+
 case $1 in
   start|stop|update|uninstall)
     exec "./${1}"
