@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [ "$CATHOOK_HOME" = "" ]; then
+  source /etc/profile
+fi
+
 cd $CATHOOK_HOME
 
 if [ ! -d cathook ]; then
