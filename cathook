@@ -13,7 +13,7 @@ cd $CATDIR
 
 case $1 in
   attach|preload|update)
-    exec "./${1}"
+    sudo "./${1}"
     ;;
   uninstall)
     sudo rm -rf ../cathook
