@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ "$CATBOT_HOME" = "" ]; then
+  source /etc/profile
+fi
+
+
 cd $CATBOT_HOME
 
 if [ ! -d catbot ]; then
