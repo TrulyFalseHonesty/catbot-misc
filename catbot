@@ -2,7 +2,7 @@
 
 cd $CATS_HOME
 
-CATDIR="$(find -name catbot)"
+CATDIR="$(find -type d -name catbot)"
 
 if [ ! -d $CATDIR ]; then
   echo "Error: Installation Path (CATS_HOME) is BROKEN, Fix IT!"
