@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 
-cd $CATS_HOME
+cd $CATBOT_HOME
 
-CATDIR="$(find -maxdepth 2 -type d -name catbot)"
-
-if [ ! -d $CATDIR ]; then
-  echo "Error: Installation Path (CATS_HOME) is BROKEN, Fix IT!"
+if [ ! -d catbot ]; then
+  echo "Error: Installation Path (CATBOT_HOME) is BROKEN, Fix IT!"
   exit
 fi
-
-cd $CATDIR
 
 case $1 in
   start|stop|update|uninstall)
